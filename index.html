@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link href="CSS/homeCss.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar" aria-label="Main navigation">
+        <div class="logo">Alazar</div>
+        <button class="hamburger" aria-label="Menu">&#9776;</button>
+        <div class="nav-links">
+            <a href="index.html" class="active" aria-label="Home">Home</a>
+            <a href="about.html" aria-label="About">About</a>
+            <a href="skills.html" aria-label="Skills">Skills</a>
+            <a href="projects.html" aria-label="Projects">Projects</a>
+            <a href="contact.html" aria-label="Contact Me">Contact Me</a>
+        </div>
+    </nav>
+    <main class="main-content">
+        <section class="text-content">
+            <h1>Hi, I am Alazar</h1>
+            <p>a passionate software developer creating innovative solutions and crafting efficient code. With a strong foundation in python, Java and web technologies. Welcome to my portfolio, where you can explore my projects, skills, and experiences. Let's create something amazing together!</p>
+        </section>
+        <div class="image-container">
+            <img src="images/photo.jpg" alt="Portrait of Alazar">
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/alazar-andualem" aria-label="LinkedIn"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+            <a href="https://github.com/aIazar" aria-label="GitHub"><img src="images/github.svg" alt="GitHub"></a>
+            <a href="x.com/aIazars" aria-label="Twitter"><img src="images/twitter.svg" alt="Twitter"></a>
+            <a href="t.me/aIazars" aria-label="Telegram"><img src="images/telegram.svg" alt="Telegram"></a>
+        </div>
+    </footer>
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('show');
+        });
+
+        document.addEventListener('click', function(event) {
+            const navLinks = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger');
+            if (!navLinks.contains(event.target) && !hamburger.contains(event.target)) {
+                navLinks.classList.remove('show');
+            }
+        });
+
+        // Add shadow on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 0) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
